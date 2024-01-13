@@ -5,7 +5,7 @@
     "provider": "Skillcraft\\ActivityFeed\\Providers\\ActivityFeedServiceProvider",
     "author": "William Troiano",
     "url": "https://github.com/skillcraft-io",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "description": "Activity Feed with Module Hook to display system events to users",
     "require": ["skillcraft/skillcraft-core"]
 }

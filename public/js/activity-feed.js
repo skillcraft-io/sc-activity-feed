@@ -1,0 +1,1 @@
+$((function(){"undefined"!=typeof BDashboard&&BDashboard.loadWidget($("#widget_activity_feed").find(".widget-content"),route("activity-feed.widget.feed"))}));

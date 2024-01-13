@@ -70,4 +70,43 @@ class ActivityFeed extends CoreModel
     {
         $query->where('is_private', false);
     }
+
+    public function getOwnerName():string
+    {
+        if (property_exists($this->owner, 'name')) {
+            return $this->owner->name;
+        }
+
+        if (method_exists($this->owner, 'getName')) {
+            return $this->owner->getName();
+        }
+
+        return '#'.$this->owner->id;
+    }
+
+    public function getOwnerLink():string
+    {
+        if (property_exists($this->owner, 'url')) {
+            return $this->owner->url;
+        }
+
+        if (method_exists($this->owner, 'getAdminUrl')) {
+            return $this->owner->getAdminUrl();
+        }
+
+        return '#';
+    }
+
+    public function getOwnerAvatarLink():?string
+    {
+        if (property_exists($this->owner, 'avatar_url')) {
+            return $this->owner->avatar_url;
+        }
+
+        if (method_exists($this->owner, 'avatarUrl')) {
+            return $this->owner->avatarUrl;
+        }
+
+        return null;
+    }
 }
