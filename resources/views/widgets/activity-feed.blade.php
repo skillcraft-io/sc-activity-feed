@@ -1,7 +1,7 @@
 @if ($histories->isNotEmpty())
 <div class="row py-3 px-2">
     @foreach ($histories as $history)
-        @include('plugins/activity-feed::feed-item', compact('history'))
+        @include('plugins/sc-activity-feed::feed-item', compact('history'))
     @endforeach
 </div>
 

@@ -27,12 +27,12 @@ class HookServiceProvider extends ServiceProvider
             return $widgets;
         }
 
-        Assets::addScriptsDirectly('vendor/core/plugins/activity-feed/js/activity-feed.js');
+        Assets::addScriptsDirectly('vendor/core/plugins/sc-activity-feed/js/activity-feed.js');
 
         return (new DashboardWidgetInstance())
             ->setPermission('activity-feed.index')
             ->setKey('widget_activity_feed')
-            ->setTitle(trans('plugins/activity-feed::activity-feed.widget_activity_feed'))
+            ->setTitle(trans('plugins/sc-activity-feed::activity-feed.widget_activity_feed'))
             ->setIcon('fas fa-history')
             ->setColor('cyan')
             ->setRoute(route('activity-feed.widget.feed'))

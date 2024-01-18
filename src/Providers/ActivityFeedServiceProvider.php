@@ -22,11 +22,15 @@ class ActivityFeedServiceProvider extends ServiceProvider
 
     public function boot(): void
     {    
-        if (! is_plugin_active('skillcraft-core')) {
+        if (is_plugin_active('skillcraft-core') || is_plugin_active('activity-feed')) {
             return;
         }
 
-        $this->setNamespace('plugins/activity-feed')
+        if (!is_plugin_active('sc-core')) {
+            return;
+        }
+
+        $this->setNamespace('plugins/sc-activity-feed')
             ->loadAndPublishConfigurations(['general', 'permissions'])
             ->loadHelpers()
             ->loadMigrations()
@@ -37,9 +41,9 @@ class ActivityFeedServiceProvider extends ServiceProvider
             PanelSectionManager::default()->beforeRendering(function () {
                 PanelSectionManager::registerItem(
                     CorePanelSection::class,
-                    fn () => PanelSectionItem::make('activity-feed')
-                        ->setTitle(trans('plugins/activity-feed::activity-feed.name'))
-                        ->withDescription(trans('plugins/activity-feed::activity-feed.description'))
+                    fn () => PanelSectionItem::make('sc-activity-feed')
+                        ->setTitle(trans('plugins/sc-activity-feed::activity-feed.name'))
+                        ->withDescription(trans('plugins/sc-activity-feed::activity-feed.description'))
                         ->withIcon('ti ti-activity')
                         ->withPriority(20)
                         ->withRoute('activity-feed.index')

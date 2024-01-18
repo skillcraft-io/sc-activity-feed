@@ -19,7 +19,7 @@ class ActivityFeedTable extends TableAbstract
             ->model(ActivityFeed::class)
             ->addColumns([
                 FormattedColumn::make('owner_id')
-                    ->label(trans('plugins/activity-feed::activity-feed.tables.owner_id'))
+                    ->label(trans('plugins/sc-activity-feed::activity-feed.tables.owner_id'))
                     ->width(200)
                     ->orderable(false)
                     ->searchable(false)

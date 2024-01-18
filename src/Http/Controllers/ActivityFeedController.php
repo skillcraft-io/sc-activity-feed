@@ -23,12 +23,12 @@ class ActivityFeedController extends BaseController
 
         return $this
             ->httpResponse()
-            ->setData(view('plugins/activity-feed::widgets.activity-feed', compact('histories', 'limit'))->render());
+            ->setData(view('plugins/sc-activity-feed::widgets.activity-feed', compact('histories', 'limit'))->render());
     }
 
     public function index(ActivityFeedTable $dataTable)
     {
-        $this->pageTitle(trans('plugins/activity-feed::activity-feed.name'));
+        $this->pageTitle(trans('plugins/sc-activity-feed::activity-feed.name'));
 
         return $dataTable->renderTable();
     }

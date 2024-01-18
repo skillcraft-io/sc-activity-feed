@@ -14,14 +14,16 @@ This plugin was inspired by my past works with many membership websites. I have 
 
 Theres many ways this could be used. Let me know how you use it.
 
-### Plugin does not provide any interface forms/widgets. Its use is geared to developers to streamline thier own projects.
+### Plugins use is geared to developers to streamline projects. A dashboard widget for admin provided.
 
 ## Requirements
 
 - Botble core 7.1.0 or higher.
-- Skillcraft Core 1.2.0 or higher
+- Skillcraft Core (sc-core) 2.0.0 or higher
 
 **Installation**
+
+Be sure to first disabled "activity-feed" and update to "sc-core" before installing plugin.
 
 1. Download the plugin
 2. Extract the downloaded file and upload the extracted folder to the `platform/plugins` directory.
